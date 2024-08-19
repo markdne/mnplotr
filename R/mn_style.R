@@ -28,7 +28,7 @@ mn_style <- function(font_title,
                      font_plot,
                      font_caption,
                      facet_space = 2,
-                     base_size = 10,
+                     base_size = 12,
                      FO = FALSE,
                      dark_gridline = FALSE,
                      ...) {
@@ -79,7 +79,7 @@ mn_style <- function(font_title,
       #This sets the font, size, type and colour of text for the chart's title, as well as setting a margin between the title and the subtitle
       plot.title = ggplot2::element_text(
         family = font_title,
-        size = rel(1.4),
+        size = rel(1.5),
         face = "bold",
         colour = colour_title,
         margin = ggplot2::margin(b = half_line),
@@ -88,7 +88,7 @@ mn_style <- function(font_title,
       #This sets the font, size, type and colour of text for the chart's subtitle, as well as setting a margin between the title and the subtitle
       plot.subtitle = ggplot2::element_text(
         family = font_subtitle,
-        size = rel(1.2),
+        size = rel(1.3),
         colour = colour_subtitle,
         margin = ggplot2::margin(t = half_line, b = half_line * 2),
         hjust = 0
@@ -159,7 +159,7 @@ mn_style <- function(font_title,
       strip.background = ggplot2::element_rect(fill = "#fafafc", linetype = "blank"),
       strip.text = ggplot2::element_text(
         family = font_title,
-        size  = rel(1.2),
+        size  = rel(1.3),
         hjust = 0,
         colour = colour_plot_text,
         margin = ggplot2::margin(0.8 * half_line, 0.8 * half_line, 0.8 * half_line, 0.8 * half_line)

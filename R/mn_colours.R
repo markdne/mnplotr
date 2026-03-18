@@ -30,71 +30,75 @@
 
 mn_palettes <- list(
   ## Base colours
-  hex_main = c("#145787", "#BF3B33", "#8C74C2", "#DE7A49", "#1E95A2", "#EFBB41", "#3A7D65", "#808080"),
+  hex_main = c("#145787", "#bf3b33", "#8c74c2", "#de7a49", "#3fb1bd", "#ffdc76", "#2f6652", "#a0a0a0"),
 
   ## Recommended categorical palettes
-  hex_blue = c("#145787", "#1E95A2", "#DE7A49", "#EFBB41", "#8C74C2"),
-  penn_red = c("#BF3B33", "#1E95A2", "#8C74C2", "#DE7A49", "#3A7D65"),
-  byzantim = c("#8C74C2", "#3A7D65", "#145787", "#DE7A49", "#1E95A2"),
-  ochre = c("#DE7A49", "#8C74C2", "#EFBB41", "#BF3B33", "#1E95A2"),
-  air_force = c("#1E95A2", "#BF3B33", "#8C74C2", "#EFBB41", "#3A7D65"),
-  hunyadi_yellow = c("#EFBB41", "#145787", "#3A7D65", "#DE7A49", "#8C74C2"),
-  hunters_green = c("#3A7D65", "#8C74C2", "#EFBB41", "#DE7A49", "#1E95A2"),
-  hex_blue_red = c("#145787", "#BF3B33"),
+  hex_blue = c("#145787", "#bf3b33", "#3fb1bd", "#2f6652", "#de7a49", "#ffdc76", "#8c74c2"),
+  penn_red = c("#bf3b33", "#3fb1bd", "#8c74c2", "#de7a49", "#2f6652"),
+  byzantium = c("#8c74c2", "#2f6652", "#145787", "#ffdc76", "#de7a49", "#3fb1bd"),
+  ochre = c("#de7a49", "#8c74c2", "#ffdc76", "#bf3b33", "#3fb1bd"),
+  teal = c("#3fb1bd", "#bf3b33", "#8c74c2", "#ffdc76", "#2f6652"),
+  hunyadi_yellow = c("#ffdc76", "#145787", "#2f6652", "#de7a49", "#8c74c2"),
+  hunters_green = c("#2f6652", "#8c74c2", "#ffdc76", "#de7a49", "#3fb1bd"),
+  hex_blue_red = c("#145787", "#bf3b33"),
+
+  hex_pairs = c(
+    "#145787", "#5b8fc7",
+    #"#4588A3", "#94C8DE",
+    "#3fb1bd", "#94d7e0",
+    "#bf3b33", "#e58c85",
+    "#ffdc76", "#ffe9a8",
+    "#2f6652", "#78a893",
+    "#8c74c2", "#b7a9e0",
+    "#de7a49", "#f3b18c",
+    "#a53f2b", "#f2b1a4",
+    "#a0a0a0", "#cfcfcf"
+  ),
 
   ## Sequential colour palettes - built from base colours
-  hex_pairs = c(
-    "#145787", "#83C0EC",
-    #"#4588A3", "#94C8DE",
-    "#1E95A2", "#94E3Eb",
-    "#BF3B33", "#E8ADAA",
-    "#EFBB41", "#F8E4B4",
-    "#3A7D65", "#A6D6C5",
-    "#8C74C2", "#D1C8E7",
-    "#DE7A49", "#F2CAB7",
-    "#A53F2B", "#F2B1A4",
-    "#CFCFCF", "#808080"
-  ),
+  ## Use https://www.learnui.design/tools/data-color-picker.html#single
+  ## To get lighter colours use # colours = 7 and final colour #f9f9f9 (ignore #f9f9f9)
+  ## To get darker colours use # colours = 7 and final colour #0b0b0b (ignore #0b0b0b)
 
   hex_blue_seq = c(
-    "#d6e4f7", "#b2c6e0", "#8fa9c9", "#6b8cb3", "#46719d", "#145787", "#144972", "#133b5d", "#112e49", "#0d2236", "#091624"
+    "#d6dce5", "#b3c0d2", "#90a4bf", "#6d89ac", "#477099", "#145787", "#1a4a71", "#1b3d5b", "#1b3046", "#182432", "#14191f"
   ),
 
-  air_force_blue_seq = c(
-    "#c8e8ed", "#abd7de", "#8ec6cf", "#70b6c0", "#4ea5b1", "#1E95A2", "#177a85", "#116069", "#0b474e", "#062f35", "#001a1d"
+  teal_seq = c(
+    "#deedef", "#c2e1e5", "#a6d5db", "#70b6c0", "#68bdc7", "#3fb1bd", "#3a929c", "#33757c", "#2c595e", "#233e41", "#192526"
   ),
 
   penn_red_seq = c(
-    "#f9dcd7", "#f2bdb4", "#e89e92", "#c17568", "#cf5e51", "#BF3B33", "#9d332c", "#7c2a24", "#5d221d", "#3f1915", "#24100b"
+    "#f5dad5", "#efbbb2", "#e69c90", "#db7e70", "#ce5e51", "#bf3b33", "#9f352d", "#7f2e26", "#612720", "#441f1a", "#291714"
   ),
 
   hunyadi_yellow_seq = c(
-    "#eee1ce", "#f1d9b3", "#f3d198", "#f3ca7d", "#f1c260", "#EFBB41", "#c09635", "#937229", "#68501e", "#403113", "#1d1400"
+    "#fdf3df", "#ffedc5", "#ffe7ab", "#ffe191", "#ffdc76", "#ffdc76", "#d1b04c", "#a68c40", "#7c6933", "#544827", "#30291a"
   ),
 
   hunters_green_seq = c(
-    "#cee8dd", "#b0d2c4", "#93bcab", "#75a793", "#58927c", "#3A7D65", "#2e6753", "#235241", "#193e30", "#0e2b21", "#011a11"
+    "#d6dfdb", "#b4c6be", "#92ada1", "#719586", "#507d6b", "#2f6652", "#2a5646", "#25463a", "#20372e", "#1a2923", "#141b18"
   ),
 
   byzantium_seq = c(
-    "#e7dff4", "#d5c9ea", "#c3b3e0", "#b19ed6", "#9f89cc", "#8C74C2", "#735f9e", "#5a4a7c", "#43375c", "#2d243d", "#181321"
+    "#e7e2f0", "#d5cbe7", "#c3b5de", "#b19fd5", "#9f89cb", "#8c74c2", "#7561a0", "#5e4f7f", "#493e60", "#342d43", "#201d27"
   ),
 
   ochre_seq = c(
-    "#f7ddd2", "#f5c9b6", "#f2b59a", "#eca17f", "#e68e64", "#DE7A49", "#b4633b", "#8c4e2e", "#653921", "#422516", "#221205"
+    "#f9e4da", "#f7cebc", "#f3b99e", "#eda481", "#e68f65", "#de7a49", "#b7663f", "#925335", "#6e412b", "#4c2f21", "#2c1e17"
   ),
 
   chestnut_seq = c(
-    "#f8dcd5", "#ebbcb0", "#dc9d8d", "#cb7e6b", "#b95f4a", "#a53f2b", "#893625", "#6d2d1e", "#532318", "#3a1a12", "#231109"
+    "#f0d9d3", "#e4baaf", "#d79b8c", "#c87d6a", "#b75e4a", "#a53f2b", "#8a3726", "#6f2f21", "#55271d", "#3d1f18", "#251712"
   ),
 
   trolley_grey_seq = c(
-   "#e2e2e2", "#cecece", "#bababa", "#a6a6a6", "#939393", "#808080", "#696969", "#525252", "#3c3c3c", "#282828",  "#151515"
+   "#eaeaea", "#dbdbdb", "#cccccc", "#bdbdbd", "#aeaeae", "#a0a0a0", "#858585", "#6a6a6a", "#515151", "#393939",  "#232323"
   ),
 
   ## Diverging palettes
   div_hblue_red = c(
-    "#145787", "#4e739c", "#7891b0", "#a0b0c6", "#c8d0db", "#f1f1f1", "#edcdc8", "#e7aaa0", "#dc877a", "#cf6355", "#BF3B33"
+    "#145787", "#4e739c", "#7891b0", "#a0b0c6", "#c8d0db", "#f1f1f1", "#edcdc8", "#e7aaa0", "#dc877a", "#cf6355", "#bf3b33"
   ),
 
   div_earth = c(
@@ -102,7 +106,7 @@ mn_palettes <- list(
   ),
 
   div_green_pur = c(
-    "#3A7D65", "#60937f", "#84aa9a", "#a7c1b6", "#ccd9d3", "#f1f1f1", "#ddd7e8", "#c9bdde", "#b5a4d5", "#a18ccc", "#8C74C2"
+    "#2f6652", "#56806f", "#7b9b8e", "#a1b7ae", "#c8d4cf", "#f1f1f1", "#ddd7e8", "#c9bdde", "#b5a4d5", "#a18ccc", "#8c74c2"
   )
 )
 
@@ -113,107 +117,117 @@ mn_palettes <- list(
   hex_blue = "#145787"
 
   #' @export
-  #' @description Air Force blue with hex code "#1E95A2"
-  #' @title Air Force blue
-  air_force_blue = "#1E95A2"
+  #' @description Hex teal with hex code "#3fb1bd"
+  #' @title teal
+  teal = "#3fb1bd"
 
   #' @export
-  #' @description Penn red with hex code "#BF3B33"
-  #' @title Penn red
-  penn_red = "#BF3B33"
+  #' @description Penn red with hex code "#bf3b33"
+  #' @title penn red
+  penn_red = "#bf3b33"
 
   #' @export
-  #' @description Hunyadi yellow with hex code "#EFBB41"
-  #' @title Hunyadi yellow
-  hunyadi_yellow = "#EFBB41"
+  #' @description Hunyadi yellow with hex code "#ffdc76"
+  #' @title hunyadi yellow
+  hunyadi_yellow = "#ffdc76"
 
   #' @export
   #' @description Hunters green with hex code "#3A7D65"
-  #' @title Hunters green
+  #' @title hunters green
   hunters_green = "#3A7D65"
 
   #' @export
-  #' @description Byzantium with hex code "#8C74C2"
-  #' @title Byzantium
-  byzantium = "#8C74C2"
+  #' @description Byzantium with hex code "#8c74c2"
+  #' @title byzantium
+  byzantium = "#8c74c2"
 
   #' @export
-  #' @description Ochre with hex code "#DE7A49"
-  #' @title Ochre
-  ochre = "#DE7A49"
+  #' @description Ochre with hex code "#de7a49"
+  #' @title ochre
+  ochre = "#de7a49"
 
   #' @export
-  #' @description Chestnut with hex code "#A53F2B"
-  #' @title Chestnut
-  chestnut = "#A53F2B"
+  #' @description Air Force blue with hex code "#1E95A2"
+  #' @title air force blue
+  air_force_blue = "#1E95A2"
 
   #' @export
-  #' @description Light hex blue with hex code "#83C0EC". Alternative is "#64B1E8"
-  #' @title Light hex blue
-  light_hex_blue = "#83C0EC"
+  #' @description Chestnut with hex code "#a53f2b"
+  #' @title chestnut
+  chestnut = "#a53f2b"
 
   #' @export
-  #' @description Light Air Force blue with hex code "#94E3EB". Alternative is "#88D7F8"
-  #' @title Light Air Force blue
-  light_air_force_blue = "#94E3EB"
+  #' @description Light hex blue with hex code "#5b8fc7". Alternative is "#64B1E8"
+  #' @title light hex blue
+  light_hex_blue = "#5b8fc7"
 
   #' @export
-  #' @description Light Penn red with hex code "#E8ADAA". Alternative is "#F2665C"
-  #' @title Light Penn red
-  light_penn_red = "#E8ADAA"
+  #' @description Light penn red with hex code "#e58c85". Alternative is "#F2665C"
+  #' @title light Penn red
+  light_penn_red = "#e58c85"
 
   #' @export
-  #' @description Light hunyadi yellow with hex code "#F8E4B4"
-  #' @title Light hunyadi yellow
-  light_hunyadi_yellow = "#F8E4B4"
+  #' @description Light teal with hex code "#94d7e0"
+  #' @title light teal
+  light_hunyadi_yellow = "#94d7e0"
 
   #' @export
-  #' @description Light Hunters green with hex code "#A6D6C5"
-  #' @title Light Hunters green
-  light_hunters_green = "#A6D6C5"
+  #' @description Light hunyadi yellow with hex code "#ffe9a8"
+  #' @title light hunyadi yellow
+  light_hunyadi_yellow = "#ffe9a8"
 
   #' @export
-  #' @description Light byzantium with hex code "#D1C8E7"
-  #' @title Light byzantium
-  light_byzantium = "#D1C8E7"
+  #' @description Light Hunters green with hex code "#78a893"
+  #' @title light hunters green
+  light_hunters_green = "#78a893"
 
   #' @export
-  #' @description Light ochre with hex code "#F2CAB7"
-  #' @title Light ochre
-  light_ochre = "#F2CAB7"
+  #' @description Light byzantium with hex code "#b7a9e0"
+  #' @title light byzantium
+  light_byzantium = "#b7a9e0"
 
   #' @export
-  #' @description Light chestnut with hex code "#F2B1A4"
-  #' @title Light chestnut
-  light_chesnut = "#F2B1A4"
+  #' @description Light ochre with hex code "#f3b18c"
+  #' @title light ochre
+  light_ochre = "#f3b18c"
+
+  #' @export
+  #' @description Light chestnut with hex code "#f2b1a4"
+  #' @title light chestnut
+  light_chesnut = "#f2b1a4"
+
+  #' @export
+  #' @description Light Air Force blue with hex code "#A8D5DE". Alternative is "#88D7F8"
+  #' @title light air force blue
+  light_air_force_blue = "#A8D5DE"
 
   #' @export
   #' @description Whisper with hex code "#EBEBEB"
-  #' @title Whisper
+  #' @title whisper
   whisper = "#EBEBEB"
 
   #' @export
   #' @description Timberwolf with hex code "#D4D4D4". Useful as light grid line colour
-  #' @title Timberwolf
+  #' @title timberwolf
   timberwolf = "#D4D4D4"
 
   #' @export
   #' @description Suva grey with hex code "#8F8F8F". Useful as Caption colour.
-  #' @title Suva grey
+  #' @title suva grey
   suva_grey = "#8F8F8F"
 
   #' @export
   #' @description Trolley grey with hex code "#808080"
-  #' @title Trolley grey
+  #' @title trolley grey
   trolley_grey = "#808080"
 
   #' @export
   #' @description Matterhorn with hex code "#4F4F4F" Useful as Subtitle/Body & Dark Grid lines colour.
-  #' @title Matterhorn
+  #' @title matterhorn
   matterhorn = "#4F4F4F"
 
   #' @export
   #' @description Jet with hex code "#2F2F2F". Useful as Title colour.
-  #' @title Jet
+  #' @title jet
   jet = "#2F2F2F"
 

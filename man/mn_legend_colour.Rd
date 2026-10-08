@@ -2,7 +2,7 @@
 % Please edit documentation in R/mn_legends.R
 \name{mn_legend_colour}
 \alias{mn_legend_colour}
-\title{SI legend for colour aesthetics}
+\title{MN legend for colour aesthetics}
 \usage{
 mn_legend_colour()
 }
@@ -13,7 +13,7 @@ formatted colour-based legend to adorn an existing plot.
 }
 \details{
 This helper function compliments the various \code{\link[=mn_style]{mn_style()}} themes.
-The main action is to move a fill-based legend to the top left
+The main action is to move a colour-based legend to the top left
 of the plot and stretch the legend. The same action can be done
 using the \code{\link[ggplot2:guides]{ggplot2::guides()}} function.
 }

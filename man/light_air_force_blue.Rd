@@ -3,7 +3,7 @@
 \docType{data}
 \name{light_air_force_blue}
 \alias{light_air_force_blue}
-\title{Light Air Force blue}
+\title{light air force blue}
 \format{
 An object of class \code{character} of length 1.
 }
@@ -11,6 +11,6 @@ An object of class \code{character} of length 1.
 light_air_force_blue
 }
 \description{
-Light Air Force blue with hex code "#94E3EB". Alternative is "#88D7F8"
+Light Air Force blue with hex code "#A8D5DE". Alternative is "#88D7F8"
 }
 \keyword{datasets}

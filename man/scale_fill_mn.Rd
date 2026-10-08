@@ -2,7 +2,7 @@
 % Please edit documentation in R/mn_helpers.R
 \name{scale_fill_mn}
 \alias{scale_fill_mn}
-\title{scale_fill_mn}
+\title{MN colours for the scale_fill_ option}
 \usage{
 scale_fill_mn(
   palette = "air_force_blue_seq",

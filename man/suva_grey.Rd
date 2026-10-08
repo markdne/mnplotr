@@ -3,7 +3,7 @@
 \docType{data}
 \name{suva_grey}
 \alias{suva_grey}
-\title{Suva grey}
+\title{suva grey}
 \format{
 An object of class \code{character} of length 1.
 }

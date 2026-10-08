@@ -3,7 +3,7 @@
 \docType{data}
 \name{trolley_grey}
 \alias{trolley_grey}
-\title{Trolley grey}
+\title{trolley grey}
 \format{
 An object of class \code{character} of length 1.
 }

@@ -11,6 +11,6 @@ An object of class \code{character} of length 1.
 hex_blue
 }
 \description{
-Hex blue with hex code "#145787"
+Hex blue with hex code "#1464a0"
 }
 \keyword{datasets}

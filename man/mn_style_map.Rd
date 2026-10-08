@@ -28,7 +28,7 @@ sfdf <- gisr::get_admin1("Nigeria") \%>\%
 ggplot() +
    geom_sf(data = sfdf,
            aes(fill = value),
-           colour = grey10k,
+           colour = colour_gridline,
            size = .1) +
    scale_fill_mn(palette = "air_force_blue_seq",
                  discrete = FALSE,

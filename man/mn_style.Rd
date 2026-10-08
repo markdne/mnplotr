@@ -10,7 +10,7 @@ mn_style(
   font_plot,
   font_caption,
   facet_space = 2,
-  base_size = 10,
+  base_size = 12,
   FO = FALSE,
   dark_gridline = FALSE,
   ...

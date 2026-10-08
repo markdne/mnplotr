@@ -3,7 +3,7 @@
 \docType{data}
 \name{air_force_blue}
 \alias{air_force_blue}
-\title{Air Force blue}
+\title{air force blue}
 \format{
 An object of class \code{character} of length 1.
 }

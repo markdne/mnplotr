@@ -3,7 +3,7 @@
 \docType{data}
 \name{hunyadi_yellow}
 \alias{hunyadi_yellow}
-\title{Hunyadi yellow}
+\title{hunyadi yellow}
 \format{
 An object of class \code{character} of length 1.
 }
@@ -11,6 +11,6 @@ An object of class \code{character} of length 1.
 hunyadi_yellow
 }
 \description{
-Hunyadi yellow with hex code "#EFBB41"
+Hunyadi yellow with hex code "#f0c535"
 }
 \keyword{datasets}

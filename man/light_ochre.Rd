@@ -3,7 +3,7 @@
 \docType{data}
 \name{light_ochre}
 \alias{light_ochre}
-\title{Light ochre}
+\title{light ochre}
 \format{
 An object of class \code{character} of length 1.
 }
@@ -11,6 +11,6 @@ An object of class \code{character} of length 1.
 light_ochre
 }
 \description{
-Light ochre with hex code "#F2CAB7"
+Light ochre with hex code "#f3b18c"
 }
 \keyword{datasets}

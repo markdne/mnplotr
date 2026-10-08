@@ -3,7 +3,7 @@
 \docType{data}
 \name{light_byzantium}
 \alias{light_byzantium}
-\title{Light byzantium}
+\title{light byzantium}
 \format{
 An object of class \code{character} of length 1.
 }
@@ -11,6 +11,6 @@ An object of class \code{character} of length 1.
 light_byzantium
 }
 \description{
-Light byzantium with hex code "#D1C8E7"
+Light byzantium with hex code "#b7a9e0"
 }
 \keyword{datasets}

@@ -3,7 +3,7 @@
 \docType{data}
 \name{timberwolf}
 \alias{timberwolf}
-\title{Timberwolf}
+\title{timberwolf}
 \format{
 An object of class \code{character} of length 1.
 }

@@ -30,29 +30,39 @@
 
 mn_palettes <- list(
   ## Base colours
-  hex_main = c("#145787", "#bf3b33", "#8c74c2", "#de7a49", "#3fb1bd", "#ffdc76", "#2f6652", "#a0a0a0"),
+  hex_main = c("#1464a0", "#b02b23", "#7a5bbf", "#e07030", "#3fb1bd", "#f0c535", "#2d8a5e", "#7a7a7a"),
 
   ## Recommended categorical palettes
-  hex_blue = c("#145787", "#bf3b33", "#3fb1bd", "#2f6652", "#de7a49", "#ffdc76", "#8c74c2"),
-  penn_red = c("#bf3b33", "#3fb1bd", "#8c74c2", "#de7a49", "#2f6652"),
-  byzantium = c("#8c74c2", "#2f6652", "#145787", "#ffdc76", "#de7a49", "#3fb1bd"),
-  ochre = c("#de7a49", "#8c74c2", "#ffdc76", "#bf3b33", "#3fb1bd"),
-  teal = c("#3fb1bd", "#bf3b33", "#8c74c2", "#ffdc76", "#2f6652"),
-  hunyadi_yellow = c("#ffdc76", "#145787", "#2f6652", "#de7a49", "#8c74c2"),
-  hunters_green = c("#2f6652", "#8c74c2", "#ffdc76", "#de7a49", "#3fb1bd"),
-  hex_blue_red = c("#145787", "#bf3b33"),
+  hex_blue = c("#1464a0", "#b02b23", "#3fb1bd", "#2d8a5e", "#e07030", "#f0c535", "#7a5bbf"),
+  penn_red = c("#b02b23", "#3fb1bd", "#7a5bbf", "#e07030", "#2d8a5e"),
+  byzantium = c("#7a5bbf", "#2d8a5e", "#1464a0", "#f0c535", "#e07030", "#3fb1bd"),
+  ochre = c("#e07030", "#7a5bbf", "#f0c535", "#b02b23", "#3fb1bd"),
+  teal = c("#3fb1bd", "#b02b23", "#7a5bbf", "#f0c535", "#2d8a5e"),
+  hunyadi_yellow = c("#f0c535", "#1464a0", "#2d8a5e", "#e07030", "#7a5bbf"),
+  hunters_green = c("#2d8a5e", "#7a5bbf", "#f0c535", "#e07030", "#3fb1bd"),
+  hex_blue_red = c("#1464a0", "#b02b23"),
+
+  ## Colourblind-safe categorical palette (8 colours)
+  ## Built from MN base colours, benchmarked against the Okabe-Ito palette.
+  ## Checked with colorspace::deutan(), protan() and tritan() simulations: the closest pair of colours
+  ## is >= 14 CIEDE2000 apart under normal vision and all three CVD types (Okabe-Ito scores ~11).
+  ## Ordered so that the first n colours are as distinct as possible for any n.
+  ## hex blue, penn red, ochre, teal, trolley grey, jet and light ochre are MN colours.
+  ## #F0E442 (Okabe-Ito yellow) replaces hunyadi yellow, which clashes with ochre/light ochre under CVD.
+  ## byzantium and hunters green are excluded as they collide with hex blue and ochre under CVD.
+  cb_safe = c("#1464a0", "#b02b23", "#e07030", "#3fb1bd", "#7a7a7a", "#2F2F2F", "#f3b18c", "#F0E442"),
 
   hex_pairs = c(
-    "#145787", "#5b8fc7",
+    "#1464a0", "#5b8fc7",
     #"#4588A3", "#94C8DE",
     "#3fb1bd", "#94d7e0",
-    "#bf3b33", "#e58c85",
-    "#ffdc76", "#ffe9a8",
-    "#2f6652", "#78a893",
-    "#8c74c2", "#b7a9e0",
-    "#de7a49", "#f3b18c",
+    "#b02b23", "#e58c85",
+    "#f0c535", "#ffe9a8",
+    "#2d8a5e", "#78a893",
+    "#7a5bbf", "#b7a9e0",
+    "#e07030", "#f3b18c",
     "#a53f2b", "#f2b1a4",
-    "#a0a0a0", "#cfcfcf"
+    "#7a7a7a", "#cfcfcf"
   ),
 
   ## Sequential colour palettes - built from base colours
@@ -73,7 +83,7 @@ mn_palettes <- list(
   ),
 
   hunyadi_yellow_seq = c(
-    "#fdf3df", "#ffedc5", "#ffe7ab", "#ffe191", "#ffdc76", "#ffdc76", "#d1b04c", "#a68c40", "#7c6933", "#544827", "#30291a"
+    "#fdf3df", "#ffedc5", "#ffe7ab", "#ffe191", "#ffdc76", "#e8c661", "#d1b04c", "#a68c40", "#7c6933", "#544827", "#30291a"
   ),
 
   hunters_green_seq = c(
@@ -110,11 +120,18 @@ mn_palettes <- list(
   )
 )
 
+# Categorical palettes in mn_palettes: mn_rampr() recycles these rather than interpolating.
+# Add any new categorical palette here.
+mn_categorical_palettes <- c(
+  "hex_main", "hex_blue", "penn_red", "byzantium", "ochre", "teal",
+  "hunyadi_yellow", "hunters_green", "hex_blue_red", "cb_safe"
+)
+
   # Individual named colours
   #' @export
-  #' @description Hex blue with hex code "#145787"
+  #' @description Hex blue with hex code "#1464a0"
   #' @title hex blue
-  hex_blue = "#145787"
+  hex_blue = "#1464a0"
 
   #' @export
   #' @description Hex teal with hex code "#3fb1bd"
@@ -122,29 +139,29 @@ mn_palettes <- list(
   teal = "#3fb1bd"
 
   #' @export
-  #' @description Penn red with hex code "#bf3b33"
+  #' @description Penn red with hex code "#b02b23"
   #' @title penn red
-  penn_red = "#bf3b33"
+  penn_red = "#b02b23"
 
   #' @export
-  #' @description Hunyadi yellow with hex code "#ffdc76"
+  #' @description Hunyadi yellow with hex code "#f0c535"
   #' @title hunyadi yellow
-  hunyadi_yellow = "#ffdc76"
+  hunyadi_yellow = "#f0c535"
 
   #' @export
-  #' @description Hunters green with hex code "#3A7D65"
+  #' @description Hunters green with hex code "#2d8a5e"
   #' @title hunters green
-  hunters_green = "#3A7D65"
+  hunters_green = "#2d8a5e"
 
   #' @export
-  #' @description Byzantium with hex code "#8c74c2"
+  #' @description Byzantium with hex code "#7a5bbf"
   #' @title byzantium
-  byzantium = "#8c74c2"
+  byzantium = "#7a5bbf"
 
   #' @export
-  #' @description Ochre with hex code "#de7a49"
+  #' @description Ochre with hex code "#e07030"
   #' @title ochre
-  ochre = "#de7a49"
+  ochre = "#e07030"
 
   #' @export
   #' @description Air Force blue with hex code "#1E95A2"
@@ -169,7 +186,7 @@ mn_palettes <- list(
   #' @export
   #' @description Light teal with hex code "#94d7e0"
   #' @title light teal
-  light_hunyadi_yellow = "#94d7e0"
+  light_teal = "#94d7e0"
 
   #' @export
   #' @description Light hunyadi yellow with hex code "#ffe9a8"
@@ -194,7 +211,7 @@ mn_palettes <- list(
   #' @export
   #' @description Light chestnut with hex code "#f2b1a4"
   #' @title light chestnut
-  light_chesnut = "#f2b1a4"
+  light_chestnut = "#f2b1a4"
 
   #' @export
   #' @description Light Air Force blue with hex code "#A8D5DE". Alternative is "#88D7F8"
@@ -230,4 +247,9 @@ mn_palettes <- list(
   #' @description Jet with hex code "#2F2F2F". Useful as Title colour.
   #' @title jet
   jet = "#2F2F2F"
+
+  #' @export
+  #' @description Snow white with hex code "#fafafc". Used as the plot and panel background colour in mn_style themes.
+  #' @title snow white
+  snow_white = "#fafafc"
 

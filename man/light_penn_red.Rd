@@ -3,7 +3,7 @@
 \docType{data}
 \name{light_penn_red}
 \alias{light_penn_red}
-\title{Light Penn red}
+\title{light Penn red}
 \format{
 An object of class \code{character} of length 1.
 }
@@ -11,6 +11,6 @@ An object of class \code{character} of length 1.
 light_penn_red
 }
 \description{
-Light Penn red with hex code "#E8ADAA". Alternative is "#F2665C"
+Light penn red with hex code "#e58c85". Alternative is "#F2665C"
 }
 \keyword{datasets}

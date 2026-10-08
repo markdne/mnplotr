@@ -106,10 +106,10 @@ mn_preview <- function(scale = 1,
                   ...)
   
   #launch file
-  shell.exec(tmp_file)
+  utils::browseURL(tmp_file)
   
   #console output for where to file the file(s)
-  usethis::ui_info("The plot preview is now open in Photos and can be found in this temporary folder: {usethis::ui_path(tempdir())}")
+  usethis::ui_info("The plot preview will open in your default image viewer. File saved to: {usethis::ui_path(tmp_file)}")
   
 }
 
@@ -143,8 +143,16 @@ mn_preview <- function(scale = 1,
 #' mn_clear_preview() }
 #'
 mn_clear_preview <- function(){
-  
-  plot_files <- list.files(tempdir(), "previewplot")
-  
-  unlist(plot_files)
+
+  plot_files <- list.files(tempdir(), pattern = "previewplot", full.names = TRUE)
+
+  if (length(plot_files) == 0) {
+    usethis::ui_info("No preview plots found to remove.")
+    return(invisible(NULL))
+  }
+
+  file.remove(plot_files)
+  usethis::ui_done("Removed {length(plot_files)} preview plot(s) from {usethis::ui_path(tempdir())}")
+
+  return(invisible(plot_files))
 }

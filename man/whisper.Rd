@@ -3,7 +3,7 @@
 \docType{data}
 \name{whisper}
 \alias{whisper}
-\title{Whisper}
+\title{whisper}
 \format{
 An object of class \code{character} of length 1.
 }

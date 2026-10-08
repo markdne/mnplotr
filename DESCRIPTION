@@ -1,17 +1,28 @@
 Package: mnplotr
-Title: What the Package Does (One Line, Title Case)
+Title: MN ggplot2 Themes and Colour Palettes
 Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Authors@R:
+    person("Mark", "Nelms", , "nelms.mark7@gmail.com", role = c("aut", "cre"))
+Description: Provides a set of ggplot2 themes, colour palettes, and helper
+    functions for creating consistently styled and visually attractive plots.
+    Inspired by the USAID Office of HIV/AIDS style guide, the package includes
+    categorical, sequential, and diverging colour palettes, a colourblind-safe
+    palette based on the Okabe-Ito standard, and utilities for saving and
+    previewing plots.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
-Imports: 
-    magrittr
-Depends: 
-    R (>= 2.10)
-LazyData: true
+RoxygenNote: 7.3.3
+Depends:
+    R (>= 3.5)
+Imports:
+    cli,
+    ggplot2,
+    grDevices,
+    magrittr,
+    scales,
+    systemfonts,
+    usethis
+Suggests:
+    lifecycle,
+    viridis

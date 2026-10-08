@@ -18,31 +18,38 @@
 #' @importFrom scales show_col
 #' @importFrom scales alpha
 #'
+#' @return A character vector of hex colour codes of length \code{n}.
+#'
 #' @examples
 #' \dontrun{
-#' #View different interpolations of palettes
-#' mn_rampr("royals") %>%  scales::show_col()
-#' mn_rampr("royals", n = 10) %>% scales::show_col()
-#' mn_rampr("royals", n = 100)
+#' # View a sequential palette
+#' mn_rampr("hex_blue_seq") %>% scales::show_col()
+#' mn_rampr("hex_blue_seq", n = 10) %>% scales::show_col()
+#' # View a diverging palette at full interpolation
+#' mn_rampr("div_hblue_red", n = 100) %>% scales::show_col(labels = FALSE)
 #'}
 
 
 mn_rampr <- function(pal_name = "hex_blue", n, alpha = 1, reverse = FALSE) {
-  
+
+  if (!missing(n) && (!is.numeric(n) || n < 1))
+    stop("n must be a positive integer, not ", n)
+
+  if (!is.numeric(alpha) || alpha < 0 || alpha > 1)
+    stop("alpha must be a number between 0 and 1, not ", alpha)
+
   pal <- mn_palettes[[pal_name]]
-  
+
   if (is.null(pal))
-    stop("\nPlease enter a valid palette. Select from:\n",
-         paste0(c(names(mn_palettes[1]),
-                  paste0(names(mn_palettes)[2:9], "(s)")
-         ), "\n"))
+    stop("Invalid palette: '", pal_name, "'. Available palettes: ",
+         paste(names(mn_palettes), collapse = ", "))
   
   if (missing(n)) {
     n <- length(pal)
   }
   
   # Do this when you pick a discrete colour
-  if (pal_name %in% names(mn_palettes)[2:9]) {
+  if (pal_name %in% mn_categorical_palettes) {
     
     if (n > length(pal)) {
       usethis::ui_warn("You selected a discrete palette for {n} colours. {usethis::ui_code('mn_rampr()')} will only return n = {length(pal)} distinct colours. Some colours may be recycled.")
@@ -58,7 +65,7 @@ mn_rampr <- function(pal_name = "hex_blue", n, alpha = 1, reverse = FALSE) {
   }
   
   if (reverse) {
-    pal <- rev(mn_palettes[[pal_name]])
+    pal <- rev(pal)
   }
   
   return(pal)
@@ -95,6 +102,8 @@ mn_pal <- function(palette = "hex_blue", alpha = 1, reverse = FALSE) {
 #'
 #' @inheritParams viridis::scale_colour_viridis
 #'
+#' @return A ggplot2 colour scale object (discrete or continuous).
+#'
 #' @importFrom ggplot2 scale_colour_manual discrete_scale scale_colour_gradientn
 #' @export
 #'
@@ -103,17 +112,18 @@ mn_pal <- function(palette = "hex_blue", alpha = 1, reverse = FALSE) {
 #' library(ggplot2)
 #' library(mnplotr)
 #'
-#' # Apply palettes to discrete or continuous colours
+#' # Discrete colour scale
 #' ggplot(diamonds) +
 #' geom_point(aes(x = carat, y = price, colour = cut)) +
-#' scale_colour_mn("air_force_blue_seq", discrete = T)
+#' scale_colour_mn("hex_blue", discrete = TRUE)
 #'
+#' # Continuous colour scale
 #' ggplot(diamonds) +
 #' geom_point(aes(x = carat, y = price, colour = price)) +
-#' scale_colour_mn("air_force_blue_seq")}
+#' scale_colour_mn("hex_blue_seq")}
 #'
 
-scale_colour_mn <- function(palette = "air_force_blue_seq", alpha = 1, discrete = FALSE, reverse = FALSE, ...) {
+scale_colour_mn <- function(palette = "hex_blue_seq", alpha = 1, discrete = FALSE, reverse = FALSE, ...) {
   
   if (discrete == TRUE) {
     discrete_scale("colour", "mn_rampr", mn_pal(palette, alpha = alpha, reverse = reverse), ...)
@@ -128,7 +138,6 @@ scale_colour_mn <- function(palette = "air_force_blue_seq", alpha = 1, discrete 
 scale_color_mn <- scale_colour_mn
 
 
-#' @title  scale_fill_mn
 #' @title MN colours for the scale_fill_ option
 #' @description MN colours available through scale_fill_mn
 #'
@@ -142,31 +151,31 @@ scale_color_mn <- scale_colour_mn
 #' @inheritParams viridis::scale_fill_viridis
 #' @inheritParams mn_pal
 #'
+#' @return A ggplot2 fill scale object (discrete or continuous).
+#'
 #' @importFrom ggplot2 scale_fill_manual discrete_scale scale_fill_gradientn
 #' @export
 #'
 #' @examples
 #' \dontrun{
 #' library(ggplot2)
-#' library(tibble)
-#' library(sf)
-#' library(rnaturalearth)
 #' library(mnplotr)
-#' library(systemfonts)
 #'
+#' # Discrete fill scale
 #' ggplot(diamonds) +
 #'   geom_bar(aes(x = cut, fill = clarity)) +
-#'   scale_fill_mn("air_force_blue_seq", discrete = T)
+#'   scale_fill_mn("hex_blue", discrete = TRUE)
 #'
+#' # Continuous fill scale (e.g. choropleth map)
 #' rnaturalearth::ne_countries(continent = "africa", returnclass = "sf") %>%
-#'  add_column(runif = runif(nrow(.))) %>%
+#'  tibble::add_column(runif = runif(nrow(.))) %>%
 #'  ggplot() +
 #'  geom_sf(aes(fill = runif), colour = "white", size = 0.25) +
-#'  scale_fill_mn("penn_red_seq", reverse = T) +
+#'  scale_fill_mn("penn_red_seq", reverse = TRUE) +
 #'  mn_style_void()
 #'  }
 
-scale_fill_mn <- function(palette = "air_force_blue_seq", alpha = 1, discrete = FALSE, reverse = FALSE, ...) {
+scale_fill_mn <- function(palette = "hex_blue_seq", alpha = 1, discrete = FALSE, reverse = FALSE, ...) {
   
   if (discrete == TRUE) {
     discrete_scale("fill", "mn_rampr", mn_pal(palette, alpha = alpha, reverse = reverse), ...)
@@ -177,5 +186,3 @@ scale_fill_mn <- function(palette = "air_force_blue_seq", alpha = 1, discrete = 
 }
 
 
-#' @export
-scale_fill_mn <- scale_fill_mn

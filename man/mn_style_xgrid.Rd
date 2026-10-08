@@ -10,7 +10,7 @@ mn_style_xgrid(...)
 \item{...}{inherits parameters from \code{\link[=mn_style]{mn_style()}}}
 }
 \description{
-Incorporates the default mn_style graph and modifies it to include on x-axis gridlines. Useful for when you are highlighting a vertical comparison, such as rotated bar graphs
+Incorporates the default mn_style graph and modifies it to include only x-axis gridlines. Useful for when you are highlighting a vertical comparison, such as rotated bar graphs
 }
 \examples{
 \dontrun{

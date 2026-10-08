@@ -3,7 +3,7 @@
 \docType{data}
 \name{hunters_green}
 \alias{hunters_green}
-\title{Hunters green}
+\title{hunters green}
 \format{
 An object of class \code{character} of length 1.
 }
@@ -11,6 +11,6 @@ An object of class \code{character} of length 1.
 hunters_green
 }
 \description{
-Hunters green with hex code "#3A7D65"
+Hunters green with hex code "#2d8a5e"
 }
 \keyword{datasets}

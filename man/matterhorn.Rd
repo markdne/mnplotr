@@ -3,7 +3,7 @@
 \docType{data}
 \name{matterhorn}
 \alias{matterhorn}
-\title{Matterhorn}
+\title{matterhorn}
 \format{
 An object of class \code{character} of length 1.
 }

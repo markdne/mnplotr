@@ -3,7 +3,7 @@
 \docType{data}
 \name{penn_red}
 \alias{penn_red}
-\title{Penn red}
+\title{penn red}
 \format{
 An object of class \code{character} of length 1.
 }
@@ -11,6 +11,6 @@ An object of class \code{character} of length 1.
 penn_red
 }
 \description{
-Penn red with hex code "#BF3B33"
+Penn red with hex code "#b02b23"
 }
 \keyword{datasets}

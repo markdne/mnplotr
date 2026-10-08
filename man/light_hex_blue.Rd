@@ -3,7 +3,7 @@
 \docType{data}
 \name{light_hex_blue}
 \alias{light_hex_blue}
-\title{Light hex blue}
+\title{light hex blue}
 \format{
 An object of class \code{character} of length 1.
 }
@@ -11,6 +11,6 @@ An object of class \code{character} of length 1.
 light_hex_blue
 }
 \description{
-Light hex blue with hex code "#83C0EC". Alternative is "#64B1E8"
+Light hex blue with hex code "#5b8fc7". Alternative is "#64B1E8"
 }
 \keyword{datasets}

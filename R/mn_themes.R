@@ -1,6 +1,6 @@
 
 #' @title MN style plot with only y-axis gridlines
-#' @description Incorporates the default mn_style graph and modifies it to include on y-axis gridlines. Useful for when you are highlighting a horizontal comparison.
+#' @description Incorporates the default mn_style graph and modifies it to include only y-axis gridlines. Useful for when you are highlighting a horizontal comparison.
 #' @param ... inherits parameters from [mn_style()]
 #' @export
 #' @examples
@@ -20,7 +20,7 @@ mn_style_ygrid <- function(...) {
 }
 
 #' @title  MN style plot with only x-axis gridlines
-#' @description Incorporates the default mn_style graph and modifies it to include on x-axis gridlines. Useful for when you are highlighting a vertical comparison, such as rotated bar graphs
+#' @description Incorporates the default mn_style graph and modifies it to include only x-axis gridlines. Useful for when you are highlighting a vertical comparison, such as rotated bar graphs
 #'
 #' @export
 #' @importFrom ggplot2 %+replace% aes geom_point theme
@@ -82,7 +82,7 @@ mn_style_nolines <- function(...) {
 mn_style_xline <- function(...) {
   mn_style_nolines(...) %+replace%
     theme(
-      axis.line.x = element_line(colour = colour_gridline)
+      axis.line.x = ggplot2::element_line(colour = colour_gridline)
     )
 }
 
@@ -104,7 +104,7 @@ mn_style_xline <- function(...) {
 mn_style_yline <- function(...) {
   mn_style_nolines(...) %+replace%
     theme(
-      axis.line.y = element_line(colour = colour_gridline)
+      axis.line.y = ggplot2::element_line(colour = colour_gridline)
     )
 }
 
@@ -125,7 +125,7 @@ mn_style_yline <- function(...) {
 mn_style_xyline <- function(...) {
   mn_style(...) %+replace%
     theme(
-      axis.line = element_line(colour = colour_gridline),
+      axis.line = ggplot2::element_line(colour = colour_gridline),
       panel.grid.major.y = ggplot2::element_blank(),
       panel.grid.major.x = ggplot2::element_blank(),
     )
@@ -153,7 +153,7 @@ mn_style_xyline <- function(...) {
 #' ggplot() +
 #'    geom_sf(data = sfdf,
 #'            aes(fill = value),
-#'            colour = grey10k,
+#'            colour = colour_gridline,
 #'            size = .1) +
 #'    scale_fill_mn(palette = "air_force_blue_seq",
 #'                  discrete = FALSE,

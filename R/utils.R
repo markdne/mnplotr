@@ -32,7 +32,7 @@ check_fonts <- function(){
   
   #check if font (Inconsolata) is installed
   if (!font_exists())
-    cli::cli_alert_warning("Before proceeding, we recommend installing the {.strong Inconsolata} or {.strong Lato} from {.href [Google Fonts](https://fonts.google.com/specimen/Source+Sans+3)}. In the absense of Inconsolata or Lato, the default will be {.strong Arial}")
+    cli::cli_alert_warning("Before proceeding, we recommend installing {.strong Inconsolata} or {.strong Lato} from {.href [Google Fonts](https://fonts.google.com)}. In the absence of these fonts, the default will be {.strong sans}.")
   
 }
 
@@ -48,7 +48,11 @@ choose_font <- function(){
   preferred_font <- localfonts[localfonts %in% ss_fonts]
   preferred_font <- factor(preferred_font, ss_fonts) %>% sort() %>% as.character()
   preferred_font <- preferred_font[1]
-  
+
+  # Fallback: "sans" is a generic R font family that is always available,
+  # but may not appear in systemfonts listings. Guarantee a non-NA value.
+  if (is.na(preferred_font)) preferred_font <- "sans"
+
   options(mnplotr_font = preferred_font)
   
 }

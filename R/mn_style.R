@@ -6,8 +6,7 @@
 #' @param font_plot font family for the plot space, defaults to Inconsolata
 #' @param font_caption font family for captions, defaults to Inconsolata
 #' @param facet_space controls how far apart facets are from each other
-#' @param text_scale scalar that will grow/shrink all text defined within
-#' @param FO make everything black (why, who knows)
+#' @param FO if TRUE, forces all text and element colours to black. Useful for monochrome or print output.
 #' @param ... pass any parameters from theme that are not already defined within
 #'
 #' @export
@@ -71,7 +70,7 @@ mn_style <- function(font_title,
   ggplot2::theme_minimal() %+replace%
 
     ggplot2::theme(
-      text = element_text(
+      text = ggplot2::element_text(
         colour = colour_plot_text,
         size = base_size,
         ),
@@ -111,7 +110,6 @@ mn_style <- function(font_title,
       # The legend may often need some more manual tweaking when it comes to its exact position based on the plot coordinates.
       legend.position = "top",
       legend.text.align = 0,
-      #legend.justification = c(0, 0),
       legend.background = ggplot2::element_blank(),
       legend.key = ggplot2::element_blank(),
       legend.title = ggplot2::element_text(

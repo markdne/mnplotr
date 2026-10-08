@@ -12,6 +12,7 @@
 #'
 #'
 #' @export
+#' @importFrom ggplot2 unit
 #' @examples
 #' \dontrun{
 #' library(systemfonts)
@@ -24,8 +25,8 @@
 mn_legend_fill <- function() {
   ggplot2::guides(
     fill = ggplot2::guide_colourbar(
-      barheight = unit(4, units = "mm"),
-      barwidth = unit(90, units = "mm"),
+      barheight = ggplot2::unit(4, units = "mm"),
+      barwidth = ggplot2::unit(90, units = "mm"),
       direction = "horizontal",
       ticks.colour = "white",
       title.position = "top",
@@ -34,7 +35,7 @@ mn_legend_fill <- function() {
   )
 }
 
-#' SI legend for colour aesthetics
+#' MN legend for colour aesthetics
 #'
 #' @description `r lifecycle::badge('experimental')`
 #' Function attempts to create a well
@@ -42,11 +43,12 @@ mn_legend_fill <- function() {
 #'
 #' @details
 #' This helper function compliments the various [mn_style()] themes.
-#' The main action is to move a fill-based legend to the top left
+#' The main action is to move a colour-based legend to the top left
 #' of the plot and stretch the legend. The same action can be done
 #' using the [ggplot2::guides()] function.
 #'
 #' @export
+#' @importFrom ggplot2 unit
 #' @examples
 #' \dontrun{
 #' library(systemfonts)
@@ -58,8 +60,8 @@ mn_legend_fill <- function() {
 mn_legend_colour <- function() {
   ggplot2::guides(
     colour = ggplot2::guide_colourbar(
-      barheight = unit(4, units = "mm"),
-      barwidth = unit(90, units = "mm"),
+      barheight = ggplot2::unit(4, units = "mm"),
+      barwidth = ggplot2::unit(90, units = "mm"),
       direction = "horizontal",
       ticks.colour = "white",
       title.position = "top",

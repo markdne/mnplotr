@@ -10,7 +10,7 @@ mn_style_ygrid(...)
 \item{...}{inherits parameters from \code{\link[=mn_style]{mn_style()}}}
 }
 \description{
-Incorporates the default mn_style graph and modifies it to include on y-axis gridlines. Useful for when you are highlighting a horizontal comparison.
+Incorporates the default mn_style graph and modifies it to include only y-axis gridlines. Useful for when you are highlighting a horizontal comparison.
 }
 \examples{
 \dontrun{

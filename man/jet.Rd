@@ -3,7 +3,7 @@
 \docType{data}
 \name{jet}
 \alias{jet}
-\title{Jet}
+\title{jet}
 \format{
 An object of class \code{character} of length 1.
 }

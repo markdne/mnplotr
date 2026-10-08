@@ -3,7 +3,7 @@
 \docType{data}
 \name{chestnut}
 \alias{chestnut}
-\title{Chestnut}
+\title{chestnut}
 \format{
 An object of class \code{character} of length 1.
 }
@@ -11,6 +11,6 @@ An object of class \code{character} of length 1.
 chestnut
 }
 \description{
-Chestnut with hex code "#A53F2B"
+Chestnut with hex code "#a53f2b"
 }
 \keyword{datasets}
